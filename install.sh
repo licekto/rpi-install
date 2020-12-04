@@ -7,10 +7,13 @@ ROOT_PWD="root"
 pacman-key --init
 pacman-key --populate archlinuxarm
 
+pacman -Syy
+pacman -Syu --noconfirm
+
 pacman -S --noconfirm \
            vim mc sudo git sudo \
            networkmanager network-manager-applet \
-           xorg-server xorg-init xf86-video-fbdev xorg-refresh \
+           xorg-server xorg-xinit xorg-xrefresh xf86-video-fbdev \
            xfce4 xfce4-xkb-plugin lightdm lightdm-gtk-greeter
 
 systemctl enable NetworkManager.service
